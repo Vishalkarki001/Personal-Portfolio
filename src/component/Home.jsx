@@ -94,7 +94,7 @@ export default function Home() {
      
         <div className='md:w-1/2 md:ml-40 md:mt-13 mt:8 order-1'>
    
-        <img  src="http://localhost:5176/pic.jpg" className='rounded-full md:h-[430px] md:w-[430px] ' alt='image'/>
+        <img  src="pic.jpg" className='rounded-full md:h-[430px] md:w-[430px] ' alt='image'/>
         
         </div>
         </div>
