@@ -85,7 +85,7 @@ export default function Home() {
         </div>
         <br/>
         <div className=' space-y-3 flex max-[768px]:justify-center cursor-pointer'>
-        <h3 className=' bg-orange-500 p-2 rounded-full font-sans text-md '><a href="../assets/VISHAL KARKI.DOCX" download> Download cv</a></h3>
+        <h3 className=' bg-orange-500 p-2 rounded-full font-sans text-md px-4'><a href="VISHAL KARKI.docx" download> Download cv</a></h3>
         </div>
         </div>
         
@@ -94,7 +94,7 @@ export default function Home() {
      
         <div className='md:w-1/2 md:ml-40 md:mt-13 mt:8 order-1'>
    
-        <img  src="src\assets\pic.jpg" className='rounded-full md:h-[430px] md:w-[430px] ' alt='image'/>
+        <img  src="pic.jpg" className='rounded-full md:h-[430px] md:w-[430px] ' alt='image'/>
         
         </div>
         </div>
