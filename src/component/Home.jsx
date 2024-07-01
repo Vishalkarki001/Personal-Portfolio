@@ -34,7 +34,7 @@ export default function Home() {
         <h2 className=' font-sans  space-x-1 font-semibold '>Hello,I'm a </h2>
        {/* <span className=' font-sans font-bold text-orange-700 '> Developer</span>*/}
        <ReactTyped
-          className=' font-sans font-bold text-orange-700 '
+          className=' font-sans font-bold text-orange-500 '
           strings={["Developer","Programmer"]}
           typeSpeed={40}
           backSpeed={50}
@@ -94,7 +94,7 @@ export default function Home() {
      
         <div className='md:w-1/2 md:ml-40 md:mt-13 mt:8 order-1'>
    
-        <img className='rounded-full md:h-[430px] md:w-[430px] ' src="pic.jpg" alt='image'/>
+        <img  src="pic.jpg" className='rounded-full md:h-[430px] md:w-[430px] ' alt='image'/>
         
         </div>
         </div>
