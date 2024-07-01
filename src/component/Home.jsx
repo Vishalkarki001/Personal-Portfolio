@@ -85,7 +85,7 @@ export default function Home() {
         </div>
         <br/>
         <div className=' space-y-3 flex max-[768px]:justify-center cursor-pointer'>
-        <h3 className=' bg-orange-500 p-2 rounded-full font-sans text-md '><a href="./VISHAL KARKI.docx" download> Download cv</a></h3>
+        <h3 className=' bg-orange-500 p-2 rounded-full font-sans text-md '><a href="http://localhost:5176/VISHAL KARKI.DOCX" download> Download cv</a></h3>
         </div>
         </div>
         
