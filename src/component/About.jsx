@@ -6,6 +6,9 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+
+
+
 function About() {
   return (
     <>
@@ -20,7 +23,7 @@ function About() {
     </p>
     <div className='md:w-1/2 md:ml-40 md:mt-13 mt:8 order-2 float-right mt-4 '>
    
-   <img  src="pic.jpg" className=' float-end border-[2px] rounded-xl  md:h-[350px] md:w-[350px]  ' alt='image'/>
+   <img  src="../assets/pic.jpg" className=' float-end border-[2px] rounded-xl  md:h-[350px] md:w-[350px]  ' alt='image'/>
    
    </div>
     <br/>
