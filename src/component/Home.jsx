@@ -28,16 +28,16 @@ export default function Home() {
         
      <div className='max-w-screen-2xl container mx-auto px-4 md:px-20 my-20 '>
    <div className='flex flex-col md:flex-row '>
-        <div className='md:w-1/2  mt-24  space-y-2 order-2 md:order-1'> 
-        <h1 className='text-2xl font-sans font-bold '>Vishal karki</h1>
-        <div className='flex text-2xl md:text-4xl '>
-        <h2 className=' font-sans  space-x-1 font-semibold '>Hello,I'm a </h2>
+        <div className='md:w-1/2  mt-24  space-y-2 order-2 md:order-1 '> 
+        <h1 className='text-2xl font-sans font-bold max-[768px]:text-center'>Vishal karki</h1>
+        <div className='flex text-2xl md:text-4xl  '>
+        <h2 className=' font-sans  space-x-1 font-semibold  '>Hello,I'm </h2>
        {/* <span className=' font-sans font-bold text-orange-700 '> Developer</span>*/}
        <ReactTyped
           className=' font-sans font-bold text-orange-500 '
           strings={["Developer","Programmer"]}
           typeSpeed={40}
-          backSpeed={50}
+          backSpeed={60}
           loop={true}
         />
         </div>
@@ -85,7 +85,7 @@ export default function Home() {
         </div>
         <br/>
         <div className=' space-y-3 flex max-[768px]:justify-center cursor-pointer'>
-        <h3 className=' bg-orange-500 p-2 rounded-full font-sans text-md px-4'><a href="../assets/VISHAL KARKI.docx" download> Download cv</a></h3>
+        <h3 className=' bg-orange-500 p-2 rounded-full font-sans text-md px-4'><a href="VISHAL KARKI.docx" download> Download cv</a></h3>
         </div>
         </div>
         
@@ -94,7 +94,7 @@ export default function Home() {
      
         <div className='md:w-1/2 md:ml-40 md:mt-13 mt:8 order-1'>
    
-        <img  src="file:///C:/Users/Vishal%20karki/Desktop/React%20pro/Portfolio/pic.jpg" className='rounded-full md:h-[430px] md:w-[430px] ' alt='image'/>
+        <img  src="pic.jpg" className='rounded-full  ' alt='image'/>
         
         </div>
         </div>

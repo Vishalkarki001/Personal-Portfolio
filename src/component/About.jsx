@@ -9,14 +9,20 @@ import { FaGithub } from "react-icons/fa";
 function About() {
   return (
     <>
-    <div className='max-w-screen-2xl container mx-auto px-4 md:px-20 my-17  pt-10'>
+    <div className='max-w-screen-2xl container mx-auto px-4 md:px-20 my-17  pt-10 '>
+    
 
-    <h1 className='text-2xl  font-semibold font-sans underline max-[768px]:text-center'>About</h1>
-    <p className='text-xl font-sans font-medium max-[768px]:text-center'>
+    <h1 className='text-2xl  font-semibold font-sans underline max-[768px]: order-1 text-center'>About</h1>
+    <p className='text-xl font-sans font-medium max-[768px]:text-center '>
       Hello,I'm Vishal , a passionate Web developer I strive to create
        impactful and visually stunning Software solutions that leave a
        lasting impression.
     </p>
+    <div className='md:w-1/2 md:ml-40 md:mt-13 mt:8 order-2 float-right mt-4 '>
+   
+   <img  src="pic.jpg" className=' float-end border-[2px] rounded-xl  md:h-[350px] md:w-[350px]  ' alt='image'/>
+   
+   </div>
     <br/>
     <h1 className='text-orange-700 font-sans font-bold text-2xl max-[768px]:text-center'>Education-</h1>
     <p className='text-xl max-[768px]:text-center'>
@@ -27,6 +33,7 @@ function About() {
         
 
     </p>
+    
     
     <br/>
     <h1 className='text-orange-700 font-sans font-bold text-2xl space-y-3 max-[768px]:text-center'>Skills-</h1>
@@ -87,7 +94,9 @@ target="_blank"
 
 
    </div>
+   <br/>
    <hr/>
+
 </>
   )
 }
