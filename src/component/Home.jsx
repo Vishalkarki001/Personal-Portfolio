@@ -94,7 +94,7 @@ export default function Home() {
      
         <div className='md:w-1/2 md:ml-40 md:mt-13 mt:8 order-1'>
    
-        <img  src="https://github.com/Vishalkarki001/Personal-Portfolio/blob/main/pic.jpg" className='rounded-full  ' alt='image'/>
+        <img  src="https://github.com/Vishalkarki001/Personal-Portfolio/blob/main/pic.jpg?raw=true" className='rounded-full  ' alt='image'/>
         
         </div>
         </div>
