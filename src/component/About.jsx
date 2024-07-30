@@ -15,7 +15,7 @@ function About() {
     <div className='max-w-screen-2xl container mx-auto px-4 md:px-20 my-17  pt-10 '>
     
 
-    <h1 className='text-2xl  font-semibold font-sans underline max-[768px]: order-1 text-left'>About</h1>
+    <h1 className='text-2xl  font-semibold font-sans underline max-[768px]: order-1 text-left max-[768px]:text-center'>About</h1>
     <p className='text-xl font-sans font-medium max-[768px]:text-center '>
       Hello,I'm Vishal , a passionate Web developer I strive to create
        impactful and visually stunning Software solutions that leave a
