@@ -1,88 +1,119 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import { FaFacebook, FaLinkedin, FaInstagramSquare, FaTwitter, FaGithub } from "react-icons/fa";
-import ReactTyped from "react-typed";
-import Gototop from "./Gototop";
+import {  NavLink } from 'react-router-dom';
+import About from './About'
+import Skills from './Skills';
+import { FaFacebookF } from "react-icons/fa";
+import Footer from './Footer';
+import Contact from './Contact';
+
+import { FaFacebook } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa";
+import { FaInstagramSquare } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { ReactTyped} from "react-typed";
+import Gototop from './Gototop';
+
+
+
+
+
+
 
 export default function Home() {
-  return (
-    <>
-      <div className="max-w-screen-xl container mx-auto px-6 md:px-20 py-20">
-        {/* Main Flex Container */}
-        <div className="flex flex-col-reverse md:flex-row items-center justify-between">
-          {/* Text Section */}
-          <div className="md:w-1/2 space-y-6 text-center md:text-left">
-            <h1 className="text-4xl font-bold text-gray-800">
-              Hi, I'm <span className="text-orange-500">Vishal Karki</span>
-            </h1>
-            <h2 className="text-2xl font-medium text-gray-600 flex items-center justify-center md:justify-start">
-              <span className="mr-2">I'm a</span>
-              <ReactTyped
-                strings={["Developer", "Programmer"]}
-                typeSpeed={50}
-                backSpeed={70}
-                loop
-                className="text-orange-500 font-bold"
-              />
-            </h2>
-            <p className="text-lg text-gray-600">
-              Passionate about creating impactful web solutions that blend functionality with aesthetic appeal.
-            </p>
-            {/* Social Links */}
-            <div className="flex justify-center md:justify-start space-x-5 text-2xl text-gray-600">
-              <NavLink to="https://www.facebook.com/" target="_blank">
-                <FaFacebook className="hover:text-orange-500 transition-colors" />
-              </NavLink>
-              <NavLink to="https://www.linkedin.com/in/vishal-karki-3393b22b3/" target="_blank">
-                <FaLinkedin className="hover:text-orange-500 transition-colors" />
-              </NavLink>
-              <NavLink
-                to="https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fsettings%2F%3F__coig_login%3D1"
-                target="_blank"
-              >
-                <FaInstagramSquare className="hover:text-orange-500 transition-colors" />
-              </NavLink>
-              <NavLink
-                to="https://x.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJteCI6IjIifQ%3D%3D%22%7D"
-                target="_blank"
-              >
-                <FaTwitter className="hover:text-orange-500 transition-colors" />
-              </NavLink>
-              <NavLink to="https://github.com/Vishalkarki001" target="_blank">
-                <FaGithub className="hover:text-orange-500 transition-colors" />
-              </NavLink>
-            </div>
-            {/* Buttons */}
-            <div className="flex justify-center md:justify-start space-x-4 mt-6">
-              <a
-                href="https://github.com/Vishalkarki001/Personal-Portfolio/blob/main/VISHAL%20KARKI%20Resume.docx?raw=true"
-                download
-                className="bg-orange-500 text-white px-6 py-2 rounded-full shadow-md hover:bg-orange-600 transition"
-              >
-                Download CV
-              </a>
-              <NavLink
-                to="/projects"
-                className="bg-gray-200 text-gray-700 px-6 py-2 rounded-full shadow-md hover:bg-gray-300 transition"
-              >
-                View Projects
-              </NavLink>
-            </div>
-          </div>
+      
 
-          {/* Image Section */}
-          <div className="md:w-1/2 flex justify-center">
-            <img
-              src="https://github.com/Vishalkarki001/Personal-Portfolio/blob/main/pic.jpg?raw=true"
-              alt="Vishal Karki"
-              className="rounded-full border-4 border-orange-500 shadow-lg w-64 md:w-80"
-            />
-          </div>
+    return (
+        <>
+        
+     <div className='max-w-screen-2xl container mx-auto px-4 md:px-20 my-20 '>
+   <div className='flex flex-col md:flex-row '>
+        <div className='md:w-1/2  mt-24  space-y-2 order-2 md:order-1 '> 
+        <h1 className='text-2xl font-sans font-bold max-[768px]:text-center'>Vishal karki</h1>
+        <div className='flex text-2xl md:text-4xl  '>
+        <h2 className=' font-sans  space-x-1 font-semibold  '>Hello,I'm </h2>
+       {/* <span className=' font-sans font-bold text-orange-700 '> Developer</span>*/}
+       <ReactTyped
+          className=' font-sans font-bold text-orange-500 '
+          strings={["Developer","Programmer"]}
+          typeSpeed={40}
+          backSpeed={60}
+          loop={true}
+        />
         </div>
-      </div>
+        <br/>
+      <div className='flex flex-col max-[768px]:items-center space-x-1'>
+        <div  className='space-y-3   ' >
+            <h2 className='font-semibold text-xl max-[768px]:text-center'>Available on </h2>
+            
+            <div className='flex text-2xl space-x-5 cursor-pointer  '>
 
-      {/* Back to Top */}
-      <Gototop />
-    </>
-  );
-}
+                <NavLink
+            
+                to="https://www.facebook.com/"
+                target="_blank"
+                ><FaFacebook /></NavLink>
+
+            <NavLink
+            to="https://www.linkedin.com/in/vishal-karki-3393b22b3/"
+            target='_blank'
+            ><FaLinkedin /></NavLink>
+             
+            <NavLink 
+            to="https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fsettings%2F%3F__coig_login%3D1"
+            target='_blank'
+
+            >
+            <FaInstagramSquare />
+            </NavLink>
+
+            <NavLink
+            to="https://x.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJteCI6IjIifQ%3D%3D%22%7D"
+            target='_blank'
+            ><FaTwitter /></NavLink>
+            <NavLink 
+            to="https://github.com/Vishalkarki001"
+            target="_blank"
+            ><FaGithub /></NavLink>
+            </div>
+            </div>
+         
+
+
+
+
+        </div>
+        <br/>
+        <div className=' space-y-3 flex max-[768px]:justify-center cursor-pointer'>
+        <h3 className=' bg-orange-500 p-2 rounded-full font-sans text-md px-4'><a href="https://github.com/Vishalkarki001/Personal-Portfolio/blob/main/VISHAL%20KARKI%20Resume.docx?raw=true" download> Download cv</a></h3>
+    
+        </div>
+        </div>
+        
+          
+            
+     
+        <div className='md:w-1/2 md:ml-40 md:mt-13 mt:8 order-1'>
+   
+        <img  src="https://github.com/Vishalkarki001/Personal-Portfolio/blob/main/pic.jpg?raw=true" className='rounded-full  ' alt='image'/>
+        
+        </div>
+        </div>
+        
+      
+        </div>
+        
+        <hr/>
+        <div>
+      
+        <Gototop/>
+        </div>
+        
+ 
+
+     
+     
+ 
+        
+        </>
+    );
+} 
