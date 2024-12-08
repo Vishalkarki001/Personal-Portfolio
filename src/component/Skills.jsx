@@ -6,7 +6,7 @@ import tailwindcss from"../assets/tailwindcss.jpg"
 import mongodb from "../assets/mongodb.jpg"
 import  react from "../assets/react.jpg"
 import js from "../assets/js.jpg"
-
+import nodejs from "../assets/nodejs.jpg"
 function Skills() {
   const cardItem=[{
     id:1,
@@ -41,6 +41,11 @@ function Skills() {
           logo:java,
           name:"java"
           },
+          {
+          id:8,
+          logo:nodejs,
+          name:"Node js"
+          }
         
       
     
