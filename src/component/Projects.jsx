@@ -10,7 +10,7 @@ const Projects = () => {
     {
       title: "Books Store",
       description:
-        "An online bookstore application where users can explore, search, and purchase books easily.",
+        "An online bookstore application where users can registe and login user data store in a databse  search the books and the booke and create the book also delete the books and user also login with OTP",
       technologies: ["React", "Node.js", "MongoDB","javascript", "Tailwind CSS"],
       image:books,
       link: "https://github.com/Vishalkarki001/Books_Store",
