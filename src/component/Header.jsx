@@ -55,11 +55,16 @@ function Header() {
         <NavLink to ="/About"
         className={({isActive})=>`text-gray-700    px-3 py-1.5 font-sans max-[770px]:hidden ${isActive ? "text-orange-500" : "text-gray-500"}`}>About</NavLink>
     </ol>
+    <ol>
+    <NavLink to="/Projects"
+    className={({isActive})=>`text-gray-700    px-3 py-1.5 font-sans max-[770px]:hidden ${isActive ? "text-orange-500" : "text-gray-500"}`}>Projects</NavLink>
+     </ol>
  
    <ol>
     <NavLink to="/Contact"
     className={({isActive})=>`text-gray-700    px-3 py-1.5 font-sans max-[770px]:hidden ${isActive ? "text-orange-500" : "text-gray-500"}`}>Contact</NavLink>
      </ol>
+  
      <ol>
 
      <button onClick={Mode} className='flex  max-[770px]:hidden'><MdOutlineLightMode /></button>
@@ -86,6 +91,13 @@ function Header() {
           className="p-5"
       >About</NavLink>
     </ol>
+    <ol>
+    <NavLink to="/projects"
+      className="p-5"
+  >Projects</NavLink>
+  
+
+     </ol>
  
    <ol>
     <NavLink to="/Contact"

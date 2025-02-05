@@ -1,10 +1,10 @@
-import React from 'react'
 import {  NavLink } from 'react-router-dom';
 import About from './About'
 import Skills from './Skills';
 import { FaFacebookF } from "react-icons/fa";
 import Footer from './Footer';
 import Contact from './Contact';
+import Project from "./Projects"
 
 import { FaFacebook } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
@@ -85,14 +85,15 @@ export default function Home() {
         </div>
         <br/>
         <div className=' space-y-3 flex max-[768px]:justify-center cursor-pointer'>
-        <h3 className=' bg-orange-500 p-2 rounded-full font-sans text-md px-4'><a href="https://github.com/Vishalkarki001/Personal-Portfolio/blob/main/VISHAL%20KARKI%20Resume.docx?raw=true" download> Download cv</a></h3>
+        <h3 className=' bg-orange-500 p-2 rounded-full font-sans text-md px-4'><a href="https://github.com/Vishalkarki001/Personal-Portfolio/blob/main/Vishal_Karki_Resume.docx?raw=true" download> Download cv</a></h3>
+    
         </div>
         </div>
         
           
             
      
-        <div className='md:w-1/2 md:ml-40 md:mt-13 mt:8 order-1'>
+        <div className='md:w-1/3 md:ml-40 md:mt-13 mt:8 order-1'>
    
         <img  src="https://github.com/Vishalkarki001/Personal-Portfolio/blob/main/pic.jpg?raw=true" className='rounded-full  ' alt='image'/>
         
@@ -103,11 +104,28 @@ export default function Home() {
         </div>
         
         <hr/>
+<<<<<<< HEAD
         <div>
       
         <Gototop/>
         </div>
         
+=======
+     
+        <About/>
+        <div>
+      
+      <Gototop/>
+      </div>
+        <Project/>
+     
+        <Skills/>
+        <div>
+      
+      <Gototop/>
+      </div>
+
+>>>>>>> 20898d40acc5356f1a338ab18ee32e3d47b7131c
  
 
      
@@ -116,4 +134,4 @@ export default function Home() {
         
         </>
     );
-}
+} 
