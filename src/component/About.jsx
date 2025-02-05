@@ -1,10 +1,11 @@
-import React from 'react';
+
 import { NavLink } from 'react-router-dom';
 
-import { FaFacebook, FaLinkedin, FaInstagramSquare, FaTwitter, FaGithub } from "react-icons/fa";
+import {  FaLinkedin, FaInstagramSquare, FaTwitter, FaGithub } from "react-icons/fa";
 
 function About() {
   return (
+    <>
     <div className="bg-gray-50 py-10">
       <div className="max-w-screen-xl mx-auto px-6 md:px-20">
         {/* Heading */}
@@ -17,7 +18,7 @@ function About() {
           {/* Profile Image */}
           <div className="md:w-1/2 text-center">
             <img
-              src="https://github.com/Vishalkarki001/Personal-Portfolio/blob/main/pic.jpg?raw=true"
+              src="https://github.com/Vishalkarki001/Personal-Portfolio/blob/main/IMG_20240815_104334_914.jpg"
               alt="Vishal's Profile"
               className="mx-auto  rounded-2xl shadow-lg w-[300px] md:w-[350px]"
             />
@@ -26,7 +27,7 @@ function About() {
           {/* About Text */}
           <div className="md:w-1/2 text-center md:text-left">
             <p className="text-xl leading-relaxed text-gray-700 font-medium">
-              Hello, I'm <span className="font-semibold text-orange-500">Vishal</span>, a passionate Web Developer. 
+              Hello, I`m <span className="font-semibold text-orange-500">Vishal</span>, a passionate Web Developer. 
               I strive to create impactful and visually stunning software solutions that leave a lasting impression.
             </p>
           </div>
