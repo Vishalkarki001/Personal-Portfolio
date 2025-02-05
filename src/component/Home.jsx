@@ -104,10 +104,7 @@ export default function Home() {
         
         <hr/>
         <div>
-        <Skills/>
-        <About/>
       
-        <Contact/>
         <Gototop/>
         </div>
         

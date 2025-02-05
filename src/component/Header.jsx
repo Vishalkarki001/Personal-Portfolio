@@ -67,9 +67,10 @@ function Header() {
 
   
     <div className={`flex items-center text-4xl font-bold sm:visible cursor-pointer min-[770px]:hidden  md:visible `}>
-    <div className={` p-3 items-center flex  flex-col  justify-center  duration-300 md:hidden w-full h-screen text-xl font-semibold fixed bg-gray-600  text-white ${open ? `left-[0]` : `left-[-100%]`} top-[55px] `}>
+    <div className={` p-3 items-center flex  flex-col text-start duration-300 md:hidden w-full h-screen text-xl font-semibold fixed bg-gray-600  text-white ${open ? `left-[0]` : `left-[-100%]`} top-[55px] `}>
         <ol>
     <NavLink
+    
     to="/"
     className="p-5"
    >Home</NavLink>

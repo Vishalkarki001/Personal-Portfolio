@@ -78,7 +78,7 @@ target='_blank'
 ><FaLinkedin /></NavLink>
 
 <NavLink 
-to="https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fsettings%2F%3F__coig_login%3D1"
+to="https://www.instagram.com/_vishal_karki/?hl=en"
 target='_blank'
 
 >
