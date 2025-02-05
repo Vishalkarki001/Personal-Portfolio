@@ -55,7 +55,6 @@ function About() {
           </ul>
         </div>
 
-<<<<<<< HEAD
 <NavLink
 to="https://www.linkedin.com/in/vishal-karki-3393b22b3/"
 target='_blank'
@@ -86,32 +85,6 @@ target="_blank"
 
 </>
   )
-=======
-        {/* Connect Section */}
-        <div className="mt-12">
-          <h2 className="text-2xl font-bold text-orange-500 text-center mb-4">Connect with Me</h2>
-          <div className="flex justify-center space-x-6 text-3xl text-gray-600">
-            <NavLink to="https://www.facebook.com/" target="_blank" className="hover:text-orange-500">
-              <FaFacebook />
-            </NavLink>
-            <NavLink to="https://www.linkedin.com/in/vishal-karki-3393b22b3/" target="_blank" className="hover:text-orange-500">
-              <FaLinkedin />
-            </NavLink>
-            <NavLink to="https://www.instagram.com/" target="_blank" className="hover:text-orange-500">
-              <FaInstagramSquare />
-            </NavLink>
-            <NavLink to="https://twitter.com/" target="_blank" className="hover:text-orange-500">
-              <FaTwitter />
-            </NavLink>
-            <NavLink to="https://github.com/Vishalkarki001" target="_blank" className="hover:text-orange-500">
-              <FaGithub />
-            </NavLink>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
->>>>>>> 20898d40acc5356f1a338ab18ee32e3d47b7131c
 }
 
 export default About;
