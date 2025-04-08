@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Gototop from './Gototop'
 
 function Footer() {

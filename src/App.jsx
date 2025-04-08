@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 import  {  Route, Routes, BrowserRouter} from 'react-router-dom'
 import Layout from './component/Layout'
@@ -6,7 +6,6 @@ import Home from './component/Home'
 import About from "./component/About"
 import Contact from "./component/Contact"
 import Skills from "./component/Skills"
-import Gototop from './component/Gototop'
 import {Toaster} from "react-hot-toast"
 import Projects from './component/Projects'
 

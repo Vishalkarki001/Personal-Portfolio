@@ -1,4 +1,3 @@
-import React from "react";
 import css from "../assets/css.jpg";
 import html from "../assets/html.jpg";
 import java from "../assets/java.jpg";
@@ -24,7 +23,7 @@ function Skills() {
     <>
       <div className="max-w-screen-2xl mx-auto px-4 md:px-20 my-16">
         {/* Heading */}
-        <h1 className="text-4xl font-bold mb-8 text-center text-gray-800">
+        <h1 className="text-4xl font-bold mb-8 text-center text-gray-800 dark:text-white">
           My Skills
         </h1>
 
@@ -33,7 +32,7 @@ function Skills() {
           {cardItem.map(({ id, logo, name }) => (
             <div
               key={id}
-              className="flex flex-col items-center justify-center bg-white shadow-md rounded-lg p-4 transition-transform duration-300 hover:scale-105"
+              className="flex flex-col items-center justify-center bg-white dark:bg-gray-800 shadow-md rounded-lg p-4 transition-transform duration-300 hover:scale-105"
             >
               <div className="w-24 h-24 md:w-28 md:h-28">
                 <img
@@ -42,7 +41,7 @@ function Skills() {
                   className="w-full h-full object-contain rounded-full mix-blend-multiply"
                 />
               </div>
-              <h3 className="mt-4 text-xl font-semibold text-gray-700">
+              <h3 className="mt-4 text-xl font-semibold text-gray-700 dark:text-gray-200">
                 {name}
               </h3>
             </div>
@@ -50,7 +49,7 @@ function Skills() {
         </div>
       </div>
 
-      <hr className="my-10 border-t-2 border-gray-200" />
+      <hr className="my-10 border-t-2 border-gray-200 dark:border-gray-700" />
     </>
   );
 }
