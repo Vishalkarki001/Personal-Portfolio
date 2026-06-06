@@ -1,104 +1,137 @@
-import { IoIosMenu } from "react-icons/io";
-import { IoMdClose } from "react-icons/io";
-import { MdOutlineLightMode } from "react-icons/md";
-import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { IoIosMenu, IoMdClose } from "react-icons/io";
+import { FiSun, FiMoon } from "react-icons/fi";
+import useTheme from "./useTheme";
+
+const navItems = [
+  { name: "Home", href: "#home", id: "home" },
+  { name: "About", href: "#about", id: "about" },
+  { name: "Skills", href: "#skills", id: "skills" },
+  { name: "Projects", href: "#projects", id: "projects" },
+  { name: "Contact", href: "#contact", id: "contact" },
+];
 
 function Header() {
   const [open, setOpen] = useState(false);
-  const [mode, setMode] = useState("Light");
+  const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState("home");
+  const { theme, toggleTheme } = useTheme();
 
-  const toggleMode = () => {
-    if (mode === "Light") {
-      setMode("Dark");
-      document.documentElement.classList.add("dark");
-    } else {
-      setMode("Light");
-      document.documentElement.classList.remove("dark");
-    }
-  };
+  // Add a stronger backdrop once the user scrolls a bit
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-  const navItems = [
-    { name: "Home", path: "/" },
-    { name: "Skills", path: "/Skills" },
-    { name: "About", path: "/About" },
-    { name: "Projects", path: "/Projects" },
-    { name: "Contact", path: "/Contact" },
-  ];
+  // Scroll-spy: highlight the nav item for the section in view
+  useEffect(() => {
+    const sections = navItems
+      .map((i) => document.getElementById(i.id))
+      .filter(Boolean);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+    );
+
+    sections.forEach((s) => observer.observe(s));
+    return () => observer.disconnect();
+  }, []);
+
+  const ThemeButton = ({ className = "" }) => (
+    <button
+      onClick={toggleTheme}
+      title="Toggle theme"
+      aria-label="Toggle theme"
+      className={`grid place-items-center rounded-full border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 text-slate-700 dark:text-orange-400 hover:text-orange-500 hover:border-orange-400/60 hover:rotate-12 transition-all ${className}`}
+    >
+      {theme === "dark" ? <FiSun /> : <FiMoon />}
+    </button>
+  );
 
   return (
-    <>
-      <div className='bg-white dark:bg-zinc-900 shadow-md px-6 py-3 sticky top-0 z-50'>
-        <div className='flex justify-between items-center max-w-7xl mx-auto'>
-          {/* Logo */}
-          <div className='text-2xl font-bold text-gray-800 dark:text-white font-serif'>
-            <h1>
-              <span className='text-orange-500 text-4xl underline'>P</span>ort
-              <span className='text-orange-500 text-2xl'>F</span>olio
-            </h1>
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className='hidden md:flex items-center space-x-6 text-lg'>
-            {navItems.map((item) => (
-              <NavLink
-                key={item.name}
-                to={item.path}
-                className={({ isActive }) =>
-                  `hover:text-orange-500 transition-colors ${
-                    isActive ? "text-orange-500" : "text-gray-700 dark:text-gray-300"
-                  }`
-                }
-              >
-                {item.name}
-              </NavLink>
-            ))}
-            <button
-              onClick={toggleMode}
-              className='text-2xl text-gray-700 dark:text-white hover:text-orange-500'
-              title="Toggle Theme"
-            >
-              <MdOutlineLightMode />
-            </button>
-          </div>
-
-          {/* Mobile Menu Icon */}
-          <div className='md:hidden flex items-center text-3xl text-gray-700 dark:text-white'>
-            <button onClick={() => setOpen(!open)}>
-              {open ? <IoMdClose /> : <IoIosMenu />}
-            </button>
-          </div>
-        </div>
-        
-
-        {/* Mobile Navigation */}
-        <div
-          className={`md:hidden fixed top-16 left-0 w-full h-screen bg-zinc-900 text-white z-40 transform transition-transform duration-300 ${
-            open ? "translate-x-0" : "-translate-x-full"
-          }`}
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/80 dark:bg-black/70 backdrop-blur-xl border-b border-slate-200 dark:border-white/10 shadow-sm"
+          : "bg-transparent border-b border-transparent"
+      }`}
+    >
+      <nav className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+        {/* Logo */}
+        <a
+          href="#home"
+          className="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white hover:scale-105 transition-transform"
         >
-          <div className='flex flex-col items-center justify-center h-full gap-6 text-xl'>
-            
-            {navItems.map((item) => (
-              <NavLink
-                key={item.name}
-                to={item.path}
-                onClick={() => setOpen(false)}
-                className="hover:text-orange-500"
-              >
-                {item.name}
-              </NavLink>
-            ))}
-            <button
-              onClick={toggleMode}
-              className='text-3xl hover:text-orange-500'
+          <span className="text-orange-500">P</span>ort
+          <span className="text-orange-500">F</span>olio
+          <span className="text-orange-500">.</span>
+        </a>
+
+        {/* Desktop Navigation — active item gets an orange pill highlight */}
+        <div className="hidden md:flex items-center gap-1">
+          {navItems.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              className={`relative px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                active === item.id
+                  ? "text-white"
+                  : "text-slate-600 dark:text-slate-300 hover:text-orange-500 dark:hover:text-orange-400"
+              }`}
             >
-              <MdOutlineLightMode />
-            </button>
-          </div>
+              {active === item.id && (
+                <span className="absolute inset-0 rounded-full bg-orange-500 shadow-glow -z-0" />
+              )}
+              <span className="relative z-10">{item.name}</span>
+            </a>
+          ))}
+          <ThemeButton className="ml-3 w-10 h-10 text-lg" />
+        </div>
+
+        {/* Mobile controls */}
+        <div className="md:hidden flex items-center gap-3">
+          <ThemeButton className="w-10 h-10 text-lg" />
+          <button
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
+            className="grid place-items-center w-10 h-10 rounded-full border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 text-slate-800 dark:text-white text-2xl"
+          >
+            {open ? <IoMdClose /> : <IoIosMenu />}
+          </button>
+        </div>
+      </nav>
+
+      {/* Mobile menu */}
+      <div
+        className={`md:hidden overflow-hidden transition-[max-height,opacity] duration-300 bg-white/95 dark:bg-black/95 backdrop-blur-xl border-b border-slate-200 dark:border-white/10 ${
+          open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="flex flex-col px-6 py-4 gap-1">
+          {navItems.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              onClick={() => setOpen(false)}
+              className={`px-4 py-3 rounded-xl text-base font-medium transition-colors ${
+                active === item.id
+                  ? "bg-orange-500 text-white"
+                  : "text-slate-700 dark:text-slate-200 hover:text-orange-500 hover:bg-slate-100 dark:hover:bg-white/5"
+              }`}
+            >
+              {item.name}
+            </a>
+          ))}
         </div>
       </div>
-    </>
+    </header>
   );
 }
 

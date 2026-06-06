@@ -1,3 +1,157 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* offset for the sticky header when jumping to #sections */
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    background-color: #ffffff;
+  }
+
+  .dark body {
+    background-color: #000000;
+  }
+
+  /* Smooth light <-> dark transition */
+  body,
+  header,
+  section,
+  footer,
+  .theme-transition {
+    transition: background-color 0.4s ease, border-color 0.4s ease,
+      color 0.3s ease;
+  }
+}
+
+@layer utilities {
+  /* Orange accent gradient for headings / highlights (with subtle shimmer) */
+  .text-gradient {
+    background-image: linear-gradient(120deg, #fb923c, #f97316, #ea580c, #fb923c);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: text-shimmer 6s linear infinite;
+  }
+  @keyframes text-shimmer {
+    to {
+      background-position: 200% center;
+    }
+  }
+
+  /* Glassmorphism card surface (light + pure-black dark) */
+  .card-surface {
+    @apply bg-white dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 backdrop-blur-sm;
+  }
+
+  /* Soft glowing accent blob used behind hero / sections */
+  .glow-blob {
+    @apply pointer-events-none absolute rounded-full blur-[120px] opacity-60;
+  }
+}
+
+/* ---- Scroll reveal animation ---- */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.reveal {
+  opacity: 0;
+}
+.reveal.is-visible {
+  animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* dot-grid background pattern */
+.bg-dot-grid {
+  background-image: radial-gradient(circle, rgba(15, 23, 42, 0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.dark .bg-dot-grid {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+}
+
+/* slow rotation for the dashed ring */
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin-slow {
+  animation: spin-slow 28s linear infinite;
+}
+
+/* scroll-down mouse wheel */
+@keyframes scroll-wheel {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+.animate-scroll-wheel {
+  animation: scroll-wheel 1.5s ease-in-out infinite;
+}
+
+/* gentle float for hero image */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* slow pulse for glow blobs */
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+.animate-glow {
+  animation: glow-pulse 7s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #27272a;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f97316;
+}

@@ -1,72 +1,89 @@
+import { FiAward, FiCode, FiBriefcase } from "react-icons/fi";
+import { FaGraduationCap } from "react-icons/fa6";
+import Reveal from "./Reveal";
+import Counter from "./Counter";
+
+const stats = [
+  { icon: <FiCode />, value: 10, suffix: "+", label: "Projects Built" },
+  { icon: <FiBriefcase />, value: 2, suffix: "+", label: "Years Coding" },
+  { icon: <FiAward />, value: 15, suffix: "+", label: "Technologies" },
+];
+
 function About() {
   return (
-    <>
-      <div className="bg-gray-50 dark:bg-gray-900 py-10 transition-all duration-300">
-        <div className="max-w-screen-xl mx-auto px-6 md:px-20">
-          {/* Heading */}
-          <h1 className="text-4xl font-bold text-gray-800 dark:text-white decoration-orange-500 decoration-4 text-center mb-6">
-            About Me
-          </h1>
+    <section id="about" className="relative py-24 border-t border-slate-100 dark:border-white/5">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Heading */}
+        <Reveal className="text-center mb-16">
+          <p className="text-orange-500 font-semibold tracking-widest uppercase text-sm">
+            Get to know me
+          </p>
+          <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+            About <span className="text-gradient">Me</span>
+          </h2>
+        </Reveal>
 
-          {/* Intro Section */}
-          <div className="flex flex-col md:flex-row items-center gap-10">
-            {/* Profile Image */}
-            <div className="md:w-1/2 text-center">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Image */}
+          <Reveal className="flex justify-center">
+            <div className="relative">
+              <div className="absolute -inset-3 rounded-3xl bg-gradient-to-tr from-orange-500/30 to-amber-400/20 blur-2xl" />
               <img
-               src="https://github.com/Vishalkarki001/Personal-Portfolio/blob/main/IMG_20240815_104334_914.jpg?raw=true"
-                alt="Vishal's Profile"
-                className="mx-auto rounded-2xl shadow-lg w-[300px] md:w-[350px]"
+                src="https://github.com/Vishalkarki001/Personal-Portfolio/blob/main/IMG_20240815_104334_914.jpg?raw=true"
+                alt="Vishal Karki"
+                className="relative w-[300px] md:w-[360px] rounded-3xl object-cover shadow-xl border border-slate-200 dark:border-white/10"
               />
             </div>
+          </Reveal>
 
-            {/* About Text */}
-            <div className="md:w-1/2 text-center md:text-left">
-              <p className="text-xl leading-relaxed text-gray-700 dark:text-gray-300 font-medium">
-                Hello, I`m{" "}
-                <span className="font-semibold text-orange-500">Vishal</span>, a
-                passionate Web Developer. I strive to create impactful and
-                visually stunning software solutions that leave a lasting
-                impression.
-              </p>
-            </div>
-          </div>
-
-          {/* Education Section */}
-          <div className="mt-12">
-            <h2 className="text-2xl font-bold text-orange-500 text-center mb-4">
-              Education
-            </h2>
-            <p className="text-lg text-gray-800 dark:text-gray-300 text-center">
-              <span className="font-medium">
-                Dev Bhoomi Uttarakhand University, Dehradun
-              </span>
-              <br />
-              Bachelor of Computer Application (BCA) <br />{" "}
-              <span className="text-gray-500 dark:text-gray-400">2022-2025</span>
+          {/* Text */}
+          <Reveal delay={120}>
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+              I&apos;m <span className="text-orange-500">Vishal</span>, a passionate Web Developer.
+            </h3>
+            <p className="mt-4 text-lg leading-relaxed text-slate-600 dark:text-slate-400">
+              I love turning ideas into impactful, visually stunning software. From
+              pixel-perfect interfaces to robust backends, I focus on building products
+              that feel fast, look modern and leave a lasting impression.
             </p>
-          </div>
 
-          {/* Skills Section */}
-          <div className="mt-12">
-            <h2 className="text-2xl font-bold text-orange-500 text-center mb-4">
-              Skills
-            </h2>
-            <ul className="flex flex-wrap justify-center gap-6 text-lg font-medium text-gray-700 dark:text-gray-200">
-              {["HTML", "CSS", "Tailwind CSS", "JavaScript", "React", "Node.js", "MongoDB"].map((skill, index) => (
-                <li
-                  key={index}
-                  className="bg-orange-100 dark:bg-orange-200/20 px-4 py-2 rounded-lg shadow-sm hover:bg-orange-200 dark:hover:bg-orange-300/20"
+            {/* Education card */}
+            <div className="mt-8 card-surface rounded-2xl p-6 flex gap-4 items-start">
+              <div className="grid place-items-center w-12 h-12 rounded-xl bg-orange-500/10 text-orange-500 text-xl shrink-0">
+                <FaGraduationCap />
+              </div>
+              <div>
+                <h4 className="font-bold text-slate-900 dark:text-white">
+                  Bachelor of Computer Application (BCA)
+                </h4>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Dev Bhoomi Uttarakhand University, Dehradun
+                </p>
+                <p className="text-sm text-slate-500 dark:text-slate-500 mt-1">2022 — 2025</p>
+              </div>
+            </div>
+
+            {/* Stats */}
+            <div className="mt-6 grid grid-cols-3 gap-4">
+              {stats.map((s) => (
+                <div
+                  key={s.label}
+                  className="card-surface rounded-2xl p-4 text-center hover:-translate-y-1 transition-transform"
                 >
-                  {skill}
-                </li>
+                  <div className="grid place-items-center text-orange-500 text-xl mb-1">
+                    {s.icon}
+                  </div>
+                  <div className="text-2xl font-extrabold text-slate-900 dark:text-white">
+                    <Counter value={s.value} suffix={s.suffix} />
+                  </div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400">{s.label}</div>
+                </div>
               ))}
-            </ul>
-          </div>
+            </div>
+          </Reveal>
         </div>
       </div>
-      <br />
-      <hr className="border-gray-300 dark:border-gray-600" />
-    </>
+    </section>
   );
 }
 

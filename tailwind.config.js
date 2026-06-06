@@ -6,8 +6,20 @@ export default {
   ],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      },
+      colors: {
+        accent: {
+          DEFAULT: '#f97316',
+          hover: '#ea580c',
+        },
+      },
+      boxShadow: {
+        glow: '0 10px 40px -10px rgba(249, 115, 22, 0.45)',
+      },
+    },
   },
   plugins: [],
 }
-
